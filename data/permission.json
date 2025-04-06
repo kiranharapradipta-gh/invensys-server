@@ -1,0 +1,11 @@
+[
+  { "id": 1, "name": "Melihat barang" },
+  { "id": 2, "name": "Melihat dokumen" },
+  { "id": 3, "name": "Memasukkan barang" },
+  { "id": 4, "name": "Mengeluarkan barang" },
+  { "id": 5, "name": "Melihat divisi" },
+  { "id": 6, "name": "Melihat kategori" },
+  { "id": 7, "name": "Memindai" },
+  { "id": 8, "name": "Membuat qrcode" },
+  { "id": 9, "name": "Melihat orang" }
+]

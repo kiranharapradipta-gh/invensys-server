@@ -1,0 +1,56 @@
+# Node.js dependencies
+node_modules/
+src/uploads/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Logs
+logs
+*.log
+npm-debug.log
+yarn-debug.log
+pnpm-debug.log
+debug.log
+error.log
+.log
+log/
+
+# Runtime files
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Build files
+dist/
+build/
+.out/
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# IDE/editor files
+.vscode/
+.idea/
+*.sublime-workspace
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# PM2 logs
+pm2.log
+pm2.pid
+pm2/
+
+# Nginx/Apache logs
+*.swp

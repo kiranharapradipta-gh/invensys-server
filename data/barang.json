@@ -1,0 +1,223 @@
+[
+  {
+    "id": 1,
+    "code": "Pupuk0001",
+    "name": "Gempar",
+    "quantity": 6,
+    "unitid": "1",
+    "description": "Insektisida gempar 50 SP",
+    "image": "1742954297691.jpg",
+    "location": "Gudang",
+    "categoryid": "1"
+  },
+  {
+    "id": 2,
+    "code": "Pupuk0002",
+    "name": "Methox",
+    "quantity": 2,
+    "unitid": "1",
+    "description": "Insektisida kontak sistemik methok 42 SP",
+    "image": "1742954374254.jpg",
+    "location": "Gudang",
+    "categoryid": "1"
+  },
+  {
+    "id": 3,
+    "code": "Pupuk0003",
+    "name": "Fitoflex",
+    "quantity": 101,
+    "unitid": "2",
+    "description": "Meroke fitoflex pupuk mikro majemuk 25G",
+    "image": "1742954551287.jpg",
+    "location": "Gudang",
+    "categoryid": "1"
+  },
+  {
+    "id": 4,
+    "code": "Pupuk0004",
+    "name": "Nordox",
+    "quantity": 2,
+    "unitid": "1",
+    "description": "Nordox 56 WP",
+    "image": "1742954903100.jpg",
+    "location": "Gudang",
+    "categoryid": "1"
+  },
+  {
+    "id": 5,
+    "code": "Pupuk0005",
+    "name": "Map",
+    "quantity": 5,
+    "unitid": "1",
+    "description": "Meroke map pupuk makro majemuk 1 KG",
+    "image": "1742954995265.jpg",
+    "location": "Gudang",
+    "categoryid": "1"
+  },
+  {
+    "id": 6,
+    "code": "Pupuk0006",
+    "name": "Sop",
+    "quantity": 1,
+    "unitid": "1",
+    "description": "Meroke sop pupuk kalium sulfat 1 KG",
+    "image": "1742955070640.jpg",
+    "location": "Gudang",
+    "categoryid": "1"
+  },
+  {
+    "id": 7,
+    "code": "Pupuk0007",
+    "name": "Kalintra",
+    "quantity": 2,
+    "unitid": "1",
+    "description": "Meroke kalintra pupuk kalium nitrat (KNO3) 1 KG",
+    "image": "1742955171534.jpg",
+    "location": "Gudang",
+    "categoryid": "1"
+  },
+  {
+    "id": 8,
+    "code": "Pupuk0008",
+    "name": "Calnit",
+    "quantity": 3,
+    "unitid": "1",
+    "description": "Meroke calnit pupuk kalsium nitrat 1 KG",
+    "image": "1742955239670.jpg",
+    "location": "Gudang",
+    "categoryid": "1"
+  },
+  {
+    "id": 9,
+    "code": "Pupuk0009",
+    "name": "Mag-s",
+    "quantity": 3,
+    "unitid": "1",
+    "description": "Meroke mag-s pupuk mikro majemuk",
+    "image": "1742955297574.jpg",
+    "location": "Gudang",
+    "categoryid": "1"
+  },
+  {
+    "id": 10,
+    "code": "Pupuk0010",
+    "name": "X-tra nil",
+    "quantity": 7,
+    "unitid": "1",
+    "description": "Fungisida kontak x-tra nill 75 WP",
+    "image": "1742955426429.jpg",
+    "location": "Gudang",
+    "categoryid": "1"
+  },
+  {
+    "id": 11,
+    "code": "Pupuk0011",
+    "name": "Hi-zeb blue",
+    "quantity": 2,
+    "unitid": "1",
+    "description": "Fungisida kontak hi-zeb blue 80 WP",
+    "image": "1742955510584.jpg",
+    "location": "Gudang",
+    "categoryid": "1"
+  },
+  {
+    "id": 12,
+    "code": "Pupuk0012",
+    "name": "Map bungkus",
+    "quantity": 17,
+    "unitid": "1",
+    "description": "Meroke map yang di bungkus",
+    "image": "1742961398933.jpg",
+    "location": "Gudang",
+    "categoryid": "1"
+  },
+  {
+    "id": 13,
+    "code": "Pupuk0013",
+    "name": "Subur kali butir",
+    "quantity": 14,
+    "unitid": "1",
+    "description": "Subur kali butir yang di bungkus",
+    "image": "1742961497672.jpg",
+    "location": "Gudang",
+    "categoryid": "1"
+  },
+  {
+    "id": 14,
+    "code": "Pupuk0014",
+    "name": "Boroni",
+    "quantity": 94,
+    "unitid": "1",
+    "description": "Meroke boroni 1kg",
+    "image": "1742961600058.jpg",
+    "location": "Gudang",
+    "categoryid": "1"
+  },
+  {
+    "id": 15,
+    "code": "Pupuk0015",
+    "name": "MKP bungkus",
+    "quantity": 79,
+    "unitid": "1",
+    "description": "Meroke mkp bungkus 1 KG",
+    "image": "1742961861644.jpg",
+    "location": "Gudang",
+    "categoryid": "1"
+  },
+  {
+    "id": 16,
+    "code": "Pupuk0016",
+    "name": "Kalinitra bungkus",
+    "quantity": 50,
+    "unitid": "1",
+    "description": "Meroke kalinitra bungkus 1 KG ",
+    "image": "1742962302815.jpg",
+    "location": "Gudang",
+    "categoryid": "1"
+  },
+  {
+    "id": 17,
+    "code": "Pupuk0017",
+    "name": "Calnit bungkus 1 KG ",
+    "quantity": 68,
+    "unitid": "1",
+    "description": "Meroke calnit bungkus 1 KG",
+    "image": "1742962391233.jpg",
+    "location": "Gudang",
+    "categoryid": "1"
+  },
+  {
+    "id": 18,
+    "code": "Pupuk0018",
+    "name": "Mag-s bungkus",
+    "quantity": 49,
+    "unitid": "1",
+    "description": "Meroke mag-s bungkus 1 KG",
+    "image": "1742962475431.jpg",
+    "location": "Gudang",
+    "categoryid": "1"
+  },
+  {
+    "id": 19,
+    "code": "Pupuk0019",
+    "name": "Fosfat bungkus",
+    "quantity": 50,
+    "unitid": "1",
+    "description": "Meroke fosfat bungkus 1 KG",
+    "image": "1742962554937.jpg",
+    "location": "Gudang",
+    "categoryid": "1"
+  },
+  {
+    "id": 24,
+    "code": "295506142273",
+    "image": "1743952873510.jpg",
+    "quantity": 10,
+    "unitid": "1",
+    "location": "Mess",
+    "categoryid": "3",
+    "name": "Manchester ice crush",
+    "description": "Rokok Manchester putih",
+    "userid": 1
+  }
+]
