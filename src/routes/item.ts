@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { db } from "../db";
 import { Item } from "../types";
-import { writeFile } from "fs/promises";
+import { unlink, writeFile } from "fs/promises";
 import { saveimage } from "../utils";
 
 const x = Router()
@@ -86,9 +86,14 @@ x.post('/:id/update', async (req, res) => {
 
 x.get('/:id/delete', async (req, res) => {
   const items: Item[] = await db.get('barang')
-  const updated = items.filter(item => item.id != parseInt(req.params.id))
-  await db.set('barang', updated)
-  res.json({ deleted: true })
+  const selected = items.find(item => item.id == parseInt(req.params.id))
+  if ( ! selected ) res.json({ ok: false, message: 'item not found' })
+  else {
+    const updated = items.filter(item => item.id != parseInt(req.params.id))
+    await unlink(`src/uploads/${selected.image}`)
+    await db.set('barang', updated)
+    res.json({ deleted: true })
+  }
 })
 
 export default x

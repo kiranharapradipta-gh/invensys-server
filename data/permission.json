@@ -7,5 +7,8 @@
   { "id": 6, "name": "Melihat kategori" },
   { "id": 7, "name": "Memindai" },
   { "id": 8, "name": "Membuat qrcode" },
-  { "id": 9, "name": "Melihat orang" }
+  { "id": 9, "name": "Melihat orang" },
+
+  { "id": 10, "name": "Melihat rincian barang" },
+  { "id": 11, "name": "Menambah barang" }
 ]

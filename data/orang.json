@@ -1,9 +1,9 @@
 [
   {
     "id": 1,
-    "name": "Kiran Hara Pradipta",
-    "username": "kiran",
-    "password": "kiran123",
+    "name": "Admin applikasi",
+    "username": "Admin",
+    "password": "Admin123",
     "divisionid": 1,
     "roleid": 1,
     "permissionids": [
@@ -15,7 +15,9 @@
       6,
       7,
       8,
-      9
+      9,
+      10,
+      11
     ]
   },
   {
@@ -33,14 +35,14 @@
     ]
   },
   {
-    "id": 3,
-    "name": "Ok",
-    "username": "Ok",
-    "password": "Ok",
+    "id": 4,
+    "name": "Kiran",
+    "username": "Kiran",
+    "password": "Kiran",
     "divisionid": 0,
     "roleid": 3,
     "permissionids": [
-      1
+      9
     ]
   }
 ]
