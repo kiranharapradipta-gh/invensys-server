@@ -43,6 +43,7 @@ x.post('/', async (req, res) => {
   const newdoc = {
     id: 0,
     itemid: newitem . id,
+    userid: req.body.userid,
     type: 'masuk',
     divisionid: null,
     receiver: null,
@@ -89,7 +90,13 @@ x.get('/:id/delete', async (req, res) => {
   const selected = items.find(item => item.id == parseInt(req.params.id))
   if ( ! selected ) res.json({ ok: false, message: 'item not found' })
   else {
+    // delete the item from the items array
     const updated = items.filter(item => item.id != parseInt(req.params.id))
+    const docs: any[] = await db.get('dokumen')
+    // delete the document from the documents array
+    const docsupdated = docs.filter(doc => doc.itemid != parseInt(req.params.id))
+    await db.set('dokumen', docsupdated)
+    // delete the image file
     await unlink(`src/uploads/${selected.image}`)
     await db.set('barang', updated)
     res.json({ deleted: true })
