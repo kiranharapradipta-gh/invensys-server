@@ -44,6 +44,22 @@ x.post("/", async (req, res) => {
   res.json({ ok: true })
 });
 
+x.post('/update', async (req, res) => {
+  console.log(req.body)
+  const peoples = await db.get('orang')
+  const updated = peoples.map((people: any) => {
+    if ( people.id == req.body.id ) {
+      if ( req.body.name ) people.name = req.body.name
+      if ( req.body.username ) people.username = req.body.username
+      if ( req.body.password ) people.password = req.body.password
+      if ( req.body.divisionid ) people.divisionid = req.body.divisionid
+    }
+    return people
+  })
+  await db.set('orang', updated)
+  res.json({ updated: true })
+})
+
 x.post('/update-role', async (req, res) => {
   const peoples = await db.get('orang')
   const updated = peoples.map((people: any) => {

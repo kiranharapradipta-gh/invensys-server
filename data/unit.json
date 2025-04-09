@@ -13,6 +13,30 @@
   },
   {
     "id": 4,
-    "name": "Nice"
+    "name": "Unit"
+  },
+  {
+    "id": 5,
+    "name": "Set"
+  },
+  {
+    "id": 6,
+    "name": "Roll"
+  },
+  {
+    "id": 7,
+    "name": "Kotak"
+  },
+  {
+    "id": 8,
+    "name": "Botol"
+  },
+  {
+    "id": 9,
+    "name": "Kaleng"
+  },
+  {
+    "id": 10,
+    "name": "Batang"
   }
 ]

@@ -13,7 +13,6 @@ router.get("/:id/delete", async (req, res) => {
   console.log('delete category', req.params.id)
   const data = await db.get('kategori')
   const filtered = data.filter((category: any) => category.id != req.params.id)
-  console.log(filtered)
   await db.set('kategori', filtered)
   res.json({ updated: true })
 });

@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Admin applikasi",
     "username": "Admin",
-    "password": "Admin123",
+    "password": "Admin",
     "divisionid": 1,
     "roleid": 1,
     "permissionids": [
@@ -17,32 +17,44 @@
       8,
       9,
       10,
-      11
-    ]
-  },
-  {
-    "id": 2,
-    "name": "Asdf",
-    "username": "Asdf",
-    "password": "Asdf",
-    "divisionid": 0,
-    "roleid": 2,
-    "permissionids": [
-      1,
-      2,
-      5,
-      7
+      11,
+      12,
+      13,
+      14,
+      15
     ]
   },
   {
     "id": 4,
-    "name": "Kiran",
+    "name": "Kiran hara pradipta",
     "username": "Kiran",
     "password": "Kiran",
     "divisionid": 0,
-    "roleid": 3,
+    "roleid": 2,
     "permissionids": [
       9
     ]
+  },
+  {
+    "id": 5,
+    "name": "Asdf",
+    "username": "Asdf",
+    "password": "Asdf",
+    "divisionid": 0,
+    "roleid": 3,
+    "permissionids": [
+      5,
+      6,
+      9
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Hehe",
+    "username": "Hehe",
+    "password": "Hehe",
+    "divisionid": 0,
+    "roleid": 3,
+    "permissionids": []
   }
 ]

@@ -80,7 +80,6 @@ x.post('/:id/update', async (req, res) => {
     if ( item.id == parseInt(req.params.id) ) item[ key ] = value
     return item
   })
-  console.log('updating item', key, value, updated)
   await db.set('barang', updated)
   res.json({ updated: true })
 })

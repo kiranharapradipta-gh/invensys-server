@@ -10,5 +10,10 @@
   { "id": 9, "name": "Melihat orang" },
 
   { "id": 10, "name": "Melihat rincian barang" },
-  { "id": 11, "name": "Menambah barang" }
+  { "id": 11, "name": "Menambah barang" },
+  { "id": 12, "name": "Melihat rincian orang" },
+  { "id": 13, "name": "Menambah orang" },
+  { "id": 14, "name": "Mengedit orang" },
+  { "id": 15, "name": "Menghapus orang" }
+  
 ]

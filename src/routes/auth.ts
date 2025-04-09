@@ -5,6 +5,7 @@ const x = Router()
 
 x.post('/login', async (req, res) => {
   const { username, password, deviceid } = req.body
+  console.log('login:', req.body)
   if ( ! username && ! password ) res.json({ ok: false, message: 'username and password are required' })
   else {
     const user = await db.single('orang', user => user.username == username && user.password == password)
@@ -12,6 +13,7 @@ x.post('/login', async (req, res) => {
     else {
       const authenticated = await db.get('authenticated')
       if ( ! authenticated.find((a: any) => a.deviceid == deviceid) ) await db.set('authenticated', [ ...authenticated, { deviceid, userid: user.id } ])
+      console.log('authenticated')
       res.json({ ok: true })
     }
   }
