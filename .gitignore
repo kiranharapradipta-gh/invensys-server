@@ -1,6 +1,6 @@
 # Node.js dependencies
 node_modules/
-src/uploads/*.jpg
+# src/uploads/*.jpg
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
