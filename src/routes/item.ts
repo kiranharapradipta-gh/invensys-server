@@ -75,7 +75,7 @@ x.post('/', async (req, res) => {
     caption: `
 *Penambahan barang* oleh *${user.name}*
 *${newitem.quantity} ${unit?.name}* *${newitem.name}* di kategori *${category?.name}* dengan keterangan berikut.
-\`\`\`*${newitem.description.length? newitem.description : 'Tidak ada keterangan'}*\`\`\`
+\`\`\`${newitem.description.length? newitem.description : 'Tidak ada keterangan'}\`\`\`
   `.slice(0, 4093) + '...'
   })
 
@@ -83,16 +83,39 @@ x.post('/', async (req, res) => {
 
 })
 
-x.post('/:id/update', async (req, res) => {
-  const key = Object.keys(req.body)[0]
+x.post('/update', async (req, res) => {
+  const { userid, itemid } = req.body
+  delete req.body.userid
+  delete req.body.itemid
+  const user = await db.single('orang', user => user.id == userid)
+  const key = Object.keys(req.body)[0] as keyof Item
+  const translatedkeys
+  = key == 'code'
+  ? 'kode'
+  : key == 'name'
+  ? 'nama'
+  : key == 'quantity'
+  ? 'kuantitas'
+  : key == 'categoryid'
+  ? 'kategori'
+  : key == 'description'
+  ? 'keterangan'
+  : key
   const value = Object.values(req.body)[0]
   if ( ! key && ! value ) res.json({ ok: false, message: 'invalid payload' })
   const items: Item[] = await db.get('barang')
+  const item = items.find(item => item.id == userid)
   const updated = items.map((item: any) => {
-    if ( item.id == parseInt(req.params.id) ) item[ key ] = value
+    if ( item.id == parseInt(itemid) ) item[ key ] = value
     return item
   })
   await db.set('barang', updated)
+  await sendtowhatsapp('text', {
+    text: `
+*Perubahan* ${translatedkeys} oleh ${user?.name}
+dari ${item?.[key]} menjadi ${value}
+    `
+  })
   res.json({ updated: true })
 })
 
@@ -107,7 +130,7 @@ x.post('/delete', async (req, res) => {
     const docs: any[] = await db.get('dokumen')
     const selecteddocs = docs.filter(doc => doc.itemid == parseInt(req.body.itemid))
     const docsimages = selecteddocs.map(doc => doc.image)
-    await deleteimages([ selected.image, ...docsimages ])
+    await deleteimages(docsimages)
     // delete the document from the documents array
     const docsupdated = docs.filter(doc => doc.itemid != parseInt(req.body.itemid))
     await db.set('dokumen', docsupdated)
