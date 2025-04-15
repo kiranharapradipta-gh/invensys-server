@@ -24,26 +24,32 @@ export const deleteimages = async (images: string[], x: number = 0) => {
   await deleteimages(images, x++)
 }
 
-export const sendtowhatsapp = async (data: any) => {
+export const sendtowhatsapp = async (type: 'text'|'image', data: any) => {
   console.log('sending to whatsapp')
+  const body: any = {
+    messaging_product: 'whatsapp',
+    to: 6289633948126
+  }
+  if ( type == 'text' ) {
+    body.type = 'text'
+    body.text = {
+      body: data.text || ''
+    }
+  }
+  if ( type == 'image' ) {
+    body.type = 'image'
+    body.image = {
+      link: data.image,
+      caption: data.caption || ''
+    }
+  }
   const res = await fetch('https://graph.facebook.com/v22.0/495069927028672/messages', {
     method: 'post',
     headers: {
-      'Authorization': 'Bearer EAAJyiiK4h10BOwGr3UAIlWogdFFamaj3B4hwTwMaUZCJ2RuVu8D5fBtXeBe7W3jDvcaWh1OwwwSElJxOtr77bd1976X78rVir7VZA5PqISGdrKPeHANrTdY7q72XaRtghxE30XPZCJ70BOgUI9YeJ3XDsaP1etZBbjNIoUmVEI0li4iq8dH7ZAbZAxZCWvdA1MFgDeyhvpHmHzGbMwqJfXpBZANzo1cZD',
+      'Authorization': 'Bearer EAAJyiiK4h10BO9NgdZBfN2lEsl1cxKFVJGFDjkMqaDwblPUQ3YkNJtu5ZAW0FmKEY8ay5tEeJDfe3IqxtTsLeU9OFrYc79mu1XnRieoSMTJNrDuLqYxTMsLmfUt7NL0Uvez0quYukEzAZBms0tVFlSiQtwqrASbFT6LZB9SGaDWKDBhoU0W2qmWdWKkp3E9FEgZDZD',
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({
-      messaging_product: 'whatsapp',
-      to: 6289633948126,
-      type: data.image? "image":"text",
-      text: {
-        body: data.text
-      },
-      image: {
-        link: data.image,
-        caption: data.caption || "",
-      },
-    })
+    body: JSON.stringify(body)
   })
   const json = await res.json()
   console.log(json)

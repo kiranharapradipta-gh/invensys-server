@@ -70,7 +70,7 @@ x.post('/', async (req, res) => {
   db.set('dokumen', docsupdated)
 
   // sending to whatsapp
-  await sendtowhatsapp({
+  await sendtowhatsapp('image', {
     image: server+filename,
     caption: `
 *Penambahan barang* oleh *${user.name}*
@@ -112,7 +112,7 @@ x.post('/delete', async (req, res) => {
     const docsupdated = docs.filter(doc => doc.itemid != parseInt(req.body.itemid))
     await db.set('dokumen', docsupdated)
     await db.set('barang', updated)
-    await sendtowhatsapp({
+    await sendtowhatsapp('image', {
       image: server + selected.image,
       caption: `
 Penghapusan barang oleh *${user.name}*.
