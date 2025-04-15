@@ -112,7 +112,7 @@ x.post('/update', async (req, res) => {
   await db.set('barang', updated)
   await sendtowhatsapp('text', {
     text: `
-*Perubahan* _${translatedkeys}_ barang oleh *${user?.name}*
+*Perubahan ${translatedkeys} barang* oleh *${user?.name}*
 dari *${item?.[key]}* menjadi *${value}*
     `
   })

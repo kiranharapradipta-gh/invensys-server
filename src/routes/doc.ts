@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { db } from "../db";
 import { Item } from "../types";
-import { saveimage } from "../utils";
+import { saveimage, sendtowhatsapp, server } from "../utils";
 
 const x = Router()
 
@@ -14,8 +14,11 @@ x.post('/', async (req, res) => {
 
   const { itemid, type, quantity, image, location, description, divisionid, peopleid, userid } = req.body
 
+  const units = await db.get('unit')
   const docs: any[] = await db.get('dokumen')
   const items: Item[] = await db.get('barang')
+  const item = items.find(item => item.id == itemid)
+  const user = await db.single('orang', user => user.id == userid)
   
   const filename = await saveimage(image.data)
 
@@ -50,6 +53,14 @@ x.post('/', async (req, res) => {
     return item
   })
   await db.set('barang', updateditems)
+
+  await sendtowhatsapp('image', {
+    image: server+filename,
+    caption: `
+Transaksi *${type}* dilakukan oleh ${user?.name}
+*${quantity} ${units.find((unit: any) => unit.id == item?.unitid)} ${item?.name}*
+    `
+  })
 
   res.json({ updated: true, id: newdoc.id })
 })

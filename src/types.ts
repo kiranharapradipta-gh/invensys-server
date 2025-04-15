@@ -1,6 +1,7 @@
 export interface Item {
   id: number
   categoryid: number
+  unitid: number
   code: string
   name: string
   quantity: number
