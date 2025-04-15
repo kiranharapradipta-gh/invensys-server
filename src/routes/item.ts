@@ -88,6 +88,7 @@ x.post('/update', async (req, res) => {
   delete req.body.userid
   delete req.body.itemid
   const user = await db.single('orang', user => user.id == userid)
+  const item = await db.single('barang', item => item.id == itemid)
   const key = Object.keys(req.body)[0] as keyof Item
   const translatedkeys
   = key == 'code'
@@ -104,7 +105,6 @@ x.post('/update', async (req, res) => {
   const value = Object.values(req.body)[0]
   if ( ! key && ! value ) res.json({ ok: false, message: 'invalid payload' })
   const items: Item[] = await db.get('barang')
-  const item = items.find(item => item.id == itemid)
   const updated = items.map((item: any) => {
     if ( item.id == parseInt(itemid) ) item[ key ] = value
     return item
@@ -112,8 +112,8 @@ x.post('/update', async (req, res) => {
   await db.set('barang', updated)
   await sendtowhatsapp('text', {
     text: `
-*Perubahan ${translatedkeys}* barang oleh ${user?.name}
-dari ${item?.[key]} menjadi ${value}
+*Perubahan ${translatedkeys}* barang oleh *${user?.name}*
+dari *${item?.[key]}* menjadi *${value}*
     `
   })
   res.json({ updated: true })
