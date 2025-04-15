@@ -76,7 +76,7 @@ x.post('/', async (req, res) => {
 *Penambahan barang* oleh *${user.name}*
 *${newitem.quantity} ${unit?.name}* *${newitem.name}* di kategori *${category?.name}* dengan keterangan berikut.
 \`\`\`${newitem.description.length? newitem.description : 'Tidak ada keterangan'}\`\`\`
-  `.slice(0, 4093) + '...'
+  `.slice(0, 4093)
   })
 
   res.json({ created: true, id: newitem.id })
@@ -104,7 +104,7 @@ x.post('/update', async (req, res) => {
   const value = Object.values(req.body)[0]
   if ( ! key && ! value ) res.json({ ok: false, message: 'invalid payload' })
   const items: Item[] = await db.get('barang')
-  const item = items.find(item => item.id == userid)
+  const item = items.find(item => item.id == itemid)
   const updated = items.map((item: any) => {
     if ( item.id == parseInt(itemid) ) item[ key ] = value
     return item
@@ -112,7 +112,7 @@ x.post('/update', async (req, res) => {
   await db.set('barang', updated)
   await sendtowhatsapp('text', {
     text: `
-*Perubahan* ${translatedkeys} oleh ${user?.name}
+*Perubahan ${translatedkeys}* barang oleh ${user?.name}
 dari ${item?.[key]} menjadi ${value}
     `
   })
