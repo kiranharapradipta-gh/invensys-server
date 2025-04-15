@@ -1,8 +1,8 @@
 import { Router } from "express";
 import { db } from "../db";
 import { Item } from "../types";
-import { unlink, writeFile } from "fs/promises";
-import { saveimage } from "../utils";
+import { unlink } from "fs/promises";
+import { deleteimages, saveimage, sendtowhatsapp, server } from "../utils";
 
 const x = Router()
 
@@ -27,7 +27,10 @@ x.post('/', async (req, res) => {
     newitem . id = lastitemid
   }
 
-  const filename = await saveimage(req.body.image?.data)
+  const filename  = await saveimage(req.body.image?.data)
+  const unit      = await db.single('unit', unit => unit.id == newitem.unitid)
+  const category  = await db.single('kategori', category => category.id == newitem.categoryid)
+  const user      = await db.single('orang', user => user.id == req.body.userid)
 
   // updating image name
   newitem . image = filename
@@ -66,8 +69,17 @@ x.post('/', async (req, res) => {
 
   db.set('dokumen', docsupdated)
 
-  res.json({ created: true, id: newitem.id })
+  // sending to whatsapp
+  await sendtowhatsapp({
+    image: server+filename,
+    caption: `
+*Penambahan barang* oleh *${user.name}*
+*${newitem.quantity} ${unit?.name}* *${newitem.name}* di kategori *${category?.name}* dengan keterangan berikut.
+\`\`\`*${newitem.description.length? newitem.description : 'Tidak ada keterangan'}*\`\`\`
+  `.slice(0, 4093) + '...'
+  })
 
+  res.json({ created: true, id: newitem.id })
 
 })
 
@@ -84,20 +96,29 @@ x.post('/:id/update', async (req, res) => {
   res.json({ updated: true })
 })
 
-x.get('/:id/delete', async (req, res) => {
+x.post('/delete', async (req, res) => {
+  const user = await db.single('orang', user => user.id == req.body.userid)
   const items: Item[] = await db.get('barang')
-  const selected = items.find(item => item.id == parseInt(req.params.id))
+  const selected = items.find(item => item.id == parseInt(req.body.itemid))
   if ( ! selected ) res.json({ ok: false, message: 'item not found' })
   else {
     // delete the item from the items array
-    const updated = items.filter(item => item.id != parseInt(req.params.id))
+    const updated = items.filter(item => item.id != parseInt(req.body.itemid))
     const docs: any[] = await db.get('dokumen')
+    const selecteddocs = docs.filter(doc => doc.itemid == parseInt(req.body.itemid))
+    const docsimages = selecteddocs.map(doc => doc.image)
+    await deleteimages([ selected.image, ...docsimages ])
     // delete the document from the documents array
-    const docsupdated = docs.filter(doc => doc.itemid != parseInt(req.params.id))
+    const docsupdated = docs.filter(doc => doc.itemid != parseInt(req.body.itemid))
     await db.set('dokumen', docsupdated)
-    // delete the image file
-    await unlink(`src/uploads/${selected.image}`)
     await db.set('barang', updated)
+    await sendtowhatsapp({
+      image: server + selected.image,
+      caption: `
+Penghapusan barang oleh *${user.name}*.
+${selected.name} telah dihapus.
+      `
+    })
     res.json({ deleted: true })
   }
 })

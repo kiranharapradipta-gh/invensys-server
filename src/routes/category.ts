@@ -2,14 +2,14 @@ import { Router } from "express";
 
 import { db, DB } from '../db'
 
-const router = Router();
+const x = Router();
 
-router.get("/", async (req, res) => {
+x.get("/", async (req, res) => {
   const data = await db.get('kategori')
   res.json(data);
 });
 
-router.get("/:id/delete", async (req, res) => {
+x.get("/:id/delete", async (req, res) => {
   console.log('delete category', req.params.id)
   const data = await db.get('kategori')
   const filtered = data.filter((category: any) => category.id != req.params.id)
@@ -17,7 +17,7 @@ router.get("/:id/delete", async (req, res) => {
   res.json({ updated: true })
 });
 
-router.post("/", async (req, res) => {
+x.post("/", async (req, res) => {
 
   console.log('body', req.body)
   
@@ -39,4 +39,17 @@ router.post("/", async (req, res) => {
   res.json({ ok: true })
 });
 
-export default router;
+x.post('/update', async (req, res) => {
+  const categories = await db.get('kategori')
+  const category = categories.find((category: any) => category.id == req.body.id)
+  if (category) {
+    category.name = req.body.name
+    db.set('kategori', categories)
+    res.json({ updated: true })
+  } else {
+    res.json({ error: 'Category not found' })
+  }
+
+})
+
+export default x;

@@ -2516,5 +2516,65 @@
     "description": "Penambahan barang: Mata bor 17mm",
     "image": "1744194337733.jpg",
     "date": "Wed Apr 09 2025"
+  },
+  {
+    "id": 212,
+    "itemid": 197,
+    "userid": 1,
+    "type": "masuk",
+    "divisionid": null,
+    "receiver": null,
+    "quantity": 9483,
+    "description": "Penambahan barang: Vsivei",
+    "image": "1744655611348.jpg",
+    "date": "Tue Apr 15 2025"
+  },
+  {
+    "id": 213,
+    "itemid": 198,
+    "userid": 1,
+    "type": "masuk",
+    "divisionid": null,
+    "receiver": null,
+    "quantity": 52,
+    "description": "Penambahan barang: Hdmrg hi ey",
+    "image": "1744656141913.jpg",
+    "date": "Tue Apr 15 2025"
+  },
+  {
+    "id": 214,
+    "itemid": 199,
+    "userid": 1,
+    "type": "masuk",
+    "divisionid": null,
+    "receiver": null,
+    "quantity": 66,
+    "description": "Penambahan barang: Rhmgele",
+    "image": "1744656411648.jpg",
+    "date": "Tue Apr 15 2025"
+  },
+  {
+    "id": 215,
+    "itemid": 200,
+    "userid": 1,
+    "type": "masuk",
+    "divisionid": null,
+    "receiver": null,
+    "quantity": 9564,
+    "description": "Penambahan barang: Dhldke",
+    "image": "1744656852384.jpg",
+    "date": "Tue Apr 15 2025"
+  },
+  {
+    "id": 216,
+    "itemid": 201,
+    "userid": 1,
+    "type": "masuk",
+    "divisionid": null,
+    "receiver": null,
+    "quantity": 56,
+    "description": "Penambahan barang: Dgmgke",
+    "image": "1744657448718.jpg",
+    "date": "Tue Apr 15 2025"
   }
 ]

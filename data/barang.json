@@ -2338,5 +2338,65 @@
     "image": "1744194337733.jpg",
     "location": "Gudang",
     "categoryid": "2"
+  },
+  {
+    "id": 197,
+    "code": "Svdjcis",
+    "name": "Vsivei",
+    "quantity": 9483,
+    "categoryid": "4",
+    "unitid": "3",
+    "userid": 1,
+    "description": "Khsojsob",
+    "image": "1744655611348.jpg",
+    "location": "Jvekbsib"
+  },
+  {
+    "id": 198,
+    "code": "Yk",
+    "name": "Hdmrg hi ey",
+    "quantity": 52,
+    "categoryid": "3",
+    "unitid": "5",
+    "userid": 1,
+    "description": "Dykey kg",
+    "image": "1744656141913.jpg",
+    "location": "Dgmdg"
+  },
+  {
+    "id": 199,
+    "code": "Hkeg",
+    "name": "Rhmgele",
+    "quantity": 66,
+    "categoryid": "6",
+    "unitid": "4",
+    "userid": 1,
+    "description": "Egmegmy",
+    "image": "1744656411648.jpg",
+    "location": "Gmehm"
+  },
+  {
+    "id": 200,
+    "code": "Wjtks",
+    "name": "Dhldke",
+    "quantity": 9564,
+    "categoryid": "2",
+    "unitid": "3",
+    "userid": 1,
+    "description": "Dghgmt",
+    "image": "1744656852384.jpg",
+    "location": "Sgmsgm"
+  },
+  {
+    "id": 201,
+    "code": "Yoegkg",
+    "name": "Dgmgke",
+    "quantity": 56,
+    "categoryid": "3",
+    "unitid": "3",
+    "userid": 1,
+    "description": "Gskdgkks",
+    "image": "1744657448718.jpg",
+    "location": "Dgjdle"
   }
 ]
