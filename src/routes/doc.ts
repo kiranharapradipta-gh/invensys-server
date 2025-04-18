@@ -20,7 +20,7 @@ x.post('/', async (req, res) => {
   const item = items.find(item => item.id == itemid)
   const user = await db.single('orang', user => user.id == userid)
   
-  const filename = await saveimage(req.body?.image.data)
+  const filename = await saveimage(req.body?.image?.data)
 
   const lastdoc = docs.pop()
 

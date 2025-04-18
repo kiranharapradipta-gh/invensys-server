@@ -2576,5 +2576,31 @@
     "description": "Penambahan barang: Dgmgke",
     "image": "1744657448718.jpg",
     "date": "Tue Apr 15 2025"
+  },
+  {
+    "id": 217,
+    "itemid": 201,
+    "type": "penyesuaian",
+    "userid": 1,
+    "location": null,
+    "divisionid": null,
+    "peopleid": null,
+    "quantity": -2,
+    "description": "Huhu",
+    "image": "default-image.jpg",
+    "date": "Sat Apr 19 2025"
+  },
+  {
+    "id": 218,
+    "itemid": 201,
+    "type": "penyesuaian",
+    "userid": 1,
+    "location": null,
+    "divisionid": null,
+    "peopleid": null,
+    "quantity": -4,
+    "description": "Kkkk",
+    "image": "default-image.jpg",
+    "date": "Sat Apr 19 2025"
   }
 ]

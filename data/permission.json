@@ -14,6 +14,9 @@
   { "id": 12, "name": "Melihat rincian orang" },
   { "id": 13, "name": "Menambah orang" },
   { "id": 14, "name": "Mengedit orang" },
-  { "id": 15, "name": "Menghapus orang" }
+  { "id": 15, "name": "Menghapus orang" },
+  { "id": 16, "name": "Menyesuaikan kuantitas barang" },
+  { "id": 17, "name": "Melihat statistik" },
+  { "id": 18, "name": "Mengatur aplikasi" }
   
 ]
