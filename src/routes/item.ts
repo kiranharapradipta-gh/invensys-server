@@ -101,6 +101,8 @@ x.post('/update', async (req, res) => {
   ? 'kategori'
   : key == 'description'
   ? 'keterangan'
+  : key == 'location'
+  ? 'lokasi'
   : key
   const value = Object.values(req.body)[0]
   if ( ! key && ! value ) res.json({ ok: false, message: 'invalid payload' })

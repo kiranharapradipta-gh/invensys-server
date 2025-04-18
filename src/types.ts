@@ -2,9 +2,11 @@ export interface Item {
   id: number
   categoryid: number
   unitid: number
+  divisionid: number
   code: string
   name: string
   quantity: number
+  location: string
   description: string
   image: string | undefined
 }

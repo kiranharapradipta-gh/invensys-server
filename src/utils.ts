@@ -3,6 +3,7 @@ import { unlink, writeFile } from "fs/promises"
 export const server = 'http://185.227.134.39:4120/'
 
 export const saveimage = async (data: any) => {
+  if ( !data ) return 'default-image.jpg'
   const buffer = Buffer.from(data)
   const filename = `${new Date().getTime()}.jpg`
   const filepath = `${process.cwd()}/src/uploads/${filename}`
