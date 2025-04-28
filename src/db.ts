@@ -3,7 +3,7 @@ import { readFile, writeFile } from "fs/promises"
 export type DB = 'barang'|'dokumen'|'divisi'|'kategori'|'unit'|'orang'|'pengguna'|'authenticated'|'permission'|'role'
 
 const get = async (name: DB) => {
-  const jsondata = await readFile(`data/${name}.json`, 'utf-8')
+  const jsondata = await readFile(`src/data/${name}.json`, 'utf-8')
   return JSON.parse(jsondata)
 }
 

@@ -14,6 +14,8 @@ x.post('/', async (req, res) => {
 
   const { itemid, type, quantity, description, userid } = req.body
 
+  console.log('status', req.body.status)
+
   const units = await db.get('unit')
   const docs: any[] = await db.get('dokumen')
   const items: Item[] = await db.get('barang')
@@ -28,8 +30,8 @@ x.post('/', async (req, res) => {
   const parsedquantity
   = type == 'penyesuaian'
   ? req.body?.status == '+'
-  ? +quantity
-  : -quantity
+    ? + quantity
+    : - quantity
   : type == 'masuk'
   ? +quantity
   : type == 'keluar'
